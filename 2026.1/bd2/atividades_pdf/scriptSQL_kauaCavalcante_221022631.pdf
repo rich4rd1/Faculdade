@@ -1,0 +1,12 @@
+1) No vídeo o professor está usando um ambiente gráfico para escrever as instruções SQL. Observe se cada vez que ele solicita a execução TODOS os comandos disponíveis estão sendo executados, um em seguida do outro, ou somente UM COMANDO é executado realmente (e não todos que estão na tela de instruções da ferramenta MySQL Workbench usada por ele)?
+ 
+Atenção, pois a sua resposta para esta primeira pergunta será SOMENTE a expressão TODOS para execução de todos os comandos disponíveis na tela ou será SOMENTE a expressão UM POR VEZ para execução de somente um comando de cada vez ao invés de todos de uma só vez (não existe qualquer outra notação ou explicação como resposta da primeira pergunta, pois se existir estará incorreta as exigências deste enunciado). 
+
+R: 
+
+
+2) Com base em seus estudos/pesquisas sobre SCRIPT em Linguagem SQL para os SGBDRs, elabore a resposta para esta pergunta apresentando o que é um SCRIPT para Linguagem SQL e JUSTIFIQUE a sua resposta para a pergunta anterior (número 1), subsidiando a sua resposta de forma mais esclarecedora informando se a apresentação estava ou não solicitando a execução total de um SCRIPT ou NÃO (um comando por vez)?
+
+Atenção, pois sua resposta para ser considera realizada nesta atividade deverá possuir mais que 100 caracteres na questão 2, caso contrário a atividade nem será considerada entregue a contendo desta primeira pesquisa, independente do que esteja escrito na atividade inteira.
+
+R:

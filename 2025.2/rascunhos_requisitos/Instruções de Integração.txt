@@ -1,0 +1,87 @@
+Instruções de Integração Backend / Frontend
+1️⃣ Configuração do Banco de Dados PostgreSQL (local)
+
+Cada desenvolvedor deve criar o banco e o usuário localmente.
+
+-- Entrar no psql como superusuário
+sudo -u postgres psql
+
+-- Criar usuário
+CREATE USER softex_user WITH PASSWORD 'senha123';
+
+-- Criar banco
+CREATE DATABASE softex_db OWNER softex_user;
+
+-- Conceder permissões
+GRANT ALL PRIVILEGES ON DATABASE softex_db TO softex_user;
+
+
+Substitua softex_user e senha123 conforme desejar.
+
+2️⃣ Arquivo .env do Django
+
+Criar um arquivo .env na pasta backend/ baseado no .env.example:
+
+# Django
+SECRET_KEY=sua-chave-secreta-aqui
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1
+
+# Banco de dados
+DB_NAME=softex_db
+DB_USER=softex_user
+DB_PASSWORD=senha123
+DB_HOST=localhost
+DB_PORT=5432
+
+# URL da API para o front
+VITE_API_URL=http://localhost:8000
+
+
+SECRET_KEY: gerar uma nova chave (pode ser qualquer string temporária para testes)
+VITE_API_URL: importante para o front se comunicar com o backend local
+
+3️⃣ Inicialização do Backend
+
+Ativar o ambiente virtual:
+
+source venv/bin/activate
+
+
+Rodar as migrações do Django:
+
+python manage.py migrate
+
+
+(Opcional) Criar superusuário para acessar o admin:
+
+python manage.py createsuperuser
+
+
+Rodar o servidor local do Django:
+
+python manage.py runserver
+
+4️⃣ Inicialização do Frontend (Vue 3 + Vite)
+
+Instalar dependências (caso ainda não tenha feito):
+
+npm install
+
+
+Rodar o servidor de desenvolvimento:
+
+npm run dev
+
+
+Acessar no navegador (geralmente http://localhost:5173) e testar login/cadastro usando a API do backend.
+
+5️⃣ Dados de Teste
+
+Usuário de teste:
+
+Email: teste@teste.com
+Password: 123456
+
+
+Cada dev precisará criar este usuário via endpoint /api/cadastro/ se ainda não existir no banco local.

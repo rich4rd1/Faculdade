@@ -1,0 +1,40 @@
+# ======================================
+# CONFIGURAÇÕES DO DJANGO
+# ======================================
+
+# Chave secreta do Django (mantenha em segredo!)
+SECRET_KEY=_usu*^&4q$)r!5xrz$=f-ob8x$ksbfy8c3czaf^(oof1#ii**m
+
+# Modo de desenvolvimento (True para dev, False para produção)
+DEBUG=True
+
+# ======================================
+# CONFIGURAÇÕES DO BANCO DE DADOS
+# ======================================
+
+# Nome do banco de dados PostgreSQL
+DB_NAME=softex
+
+# Usuário do PostgreSQL
+DB_USER=postgres
+
+# Senha do PostgreSQL (ALTERE PARA SUA SENHA!)
+DB_PASSWORD=123456
+
+# Host do banco (localhost se estiver na mesma máquina)
+DB_HOST=localhost
+
+# Porta do PostgreSQL (padrão: 5432)
+DB_PORT=5432
+
+GOOGLE_CLIENT_ID=781459179681-l1jnj92bmsgcutopigmd39oorigbeio6.apps.googleusercontent.com
+
+
+# Google OAuth2 - Client Secret
+GOOGLE_CLIENT_SECRET=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
+
+# URL de callback (backend)
+GOOGLE_REDIRECT_URI=http://localhost:8000/api/auth/google/callback/
+
+# URL do frontend
+FRONTEND_URL=http://localhost:5173

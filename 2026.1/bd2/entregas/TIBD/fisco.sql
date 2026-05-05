@@ -1,3 +1,13 @@
+-- =====  tibd- APAGA  =====
+-- 
+--         SCRIPT DE INCLUSÃO (DCL)
+--
+-- Data Criacao ...........: 29/04/2026
+-- Autor(es) ..............: Kaua Richard de Souza Cavalcante
+-- Banco de Dados .........: MySQL 8.0
+-- Base de Dados (nome) ...: ti-bd
+-- ---------------------------------------------------------
+
 CREATE DATABASE olist_db;
 
 USE olist_db;
@@ -5,12 +15,12 @@ USE olist_db;
 CREATE TABLE GEOLOCALIZACAO (
     geolocalization_zip_code_prefix INT (5) NOT NULL,
     geolocalization_lat DECIMAL (10, 8) NOT NULL,
-    geolocalization_long DECIMAL (10, 8) NOT NULL,
+    geolocalization_lng DECIMAL (10, 8) NOT NULL,
     geolocalization_city VARCHAR (50) NOT NULL,
     geolocalization_state CHAR (2) NOT NULL,
     
     CONSTRAINT GEOLOCALIZACAO_PK PRIMARY KEY (geolocalization_zip_code_prefix)
-) ENGINE = InnoDB;
+);
 
 CREATE TABLE CLIENTE (
     customer_id VARCHAR (32) NOT NULL,

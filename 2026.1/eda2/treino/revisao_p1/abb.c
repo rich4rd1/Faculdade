@@ -74,13 +74,14 @@ celula *remove(celula* raiz, int x){
             raiz->dir = remove(raiz->dir, aux->dado);
             
             //caso do antecessor (esq) [1 passo esq, resto todo para direita ate null]
-            celula *temp = raiz->esq;
+            /*celula *temp = raiz->esq;
             while (temp->dir != NULL)
             {
                 temp = temp->dir;
             }
             raiz->dado = temp->dado;
             raiz->esq = remove(raiz->esq, temp->dado);
+            */
         }
         return raiz
     }

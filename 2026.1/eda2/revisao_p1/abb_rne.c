@@ -42,17 +42,7 @@ int ehPreto(celula *no){
         else return 1;
 }
 
-celula *rotacaoEsq(celula *a){
-    //direita de a
-    celula *b = a->dir;
-    //esquerda de b
-    celula *c = b->esq;
-    b->cor = a->cor;
-    a->cor = VERMELHO;
-    a->dir = c;
-    b->esq = a;
-    return b;
-}
+
 
 celula *rotacaoDir(celula *a){
     // esquerda de A

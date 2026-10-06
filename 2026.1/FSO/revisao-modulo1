@@ -1,0 +1,75 @@
+------ NOCOES BASICAS
+
+-- o que sao os sistemas operacionais e o que fazem ?
+Pare fundamental que executa em modo protegido e possui a cesso a todo o hardware e pode executar qualquer instrucao de maquina
+Definem se por serem executados em rotinas concorrentes em eventos assincronos.
+
+-- qual a funcao dos SO ?
+Gerenciar recursos de hardware e criar a abstracao de maquina.
+
+-- o que eh abstracao de maquina (maquina estendida)?
+O SO fornece uma abstração do hardware, escondendo sua complexidade e oferecendo uma interface mais simples para as aplicações utilizarem os recursos da máquina. ao inves de controlar onde seu jogo vai se instalado na memoria do computador (FX1111A2134) exatamente o path na memoria, o SO apenas diz, escolhe o path C/Downloads, que eu faco o resto.
+
+-- o que eh a multiprogramação ?
+Mantém múltiplos programas na memória para que, enquanto um estiver bloqueado esperando uma operação de E/S, outro possa utilizar a CPU.
+
+
+-- o que eh o spooling ?
+colocar trabalhos de E/S em uma fila intermediária para que um dispositivo mais lento os processe posteriormente.
+
+-- o que eh timesharing ?
+uso da CPU compartilhado porem regrado por tempo.
+
+
+----- TIPOS DE SISTEMAS OPERACIONAIS
+
+-- o que eh um sistema monoprogramavel ?
+execucao voltada para um unico programa, memoria, armazenamento, cpu. todos recursos operando para apenas um programa.
+
+-- o que eh um sistema multiprogramavel ?
+permite que os recursos sejam compartilhados entre diversos programas, gerenciando processos concorrentes aos mesmos recursos e reduzindo o tempo de resposta
+    * sistema bach
+    * sistemas de tempo compartilhado
+    * sistemas de tempo real
+
+    -- o que eh um sistema bach ?
+    acontece sem a iteracao do usuario, e as aplicacoes sao organizadas dentro de um lote de processamento.
+
+    -- o que sao sistemas de tempo compartilhado ?
+    diferentes programas sao executados ao mesmo tempo porem de maneira onde a o tempo de uso da cpu eh compartilhado e controlado em fatias (time slice)
+
+    -- o que sao sistemas em tempo real ?
+    parecidos com o de tempo compartilhado, porem o foco aqui eh o comprometimento com o tempo de entrega, ou seja o prazo de resposta eh extremamente importante, por isso em tempo real.
+
+-- o que eh um sistema monotarefa ?
+sitemas operacionais ultilizados para uso de execucao de unicas tarefas
+
+-- o que eh um sistema multitarefa ?
+permitindo a execucao de mais de uma aplicacao ao mesmo tempo.
+
+-- o que sao sistemas monoliticos ?
+possui o melhor tempo de resposta, ond e o SO roda em modo protegido e o resto em modo usuario. Todos procedimentos sao forcados a fazer um (SVC) supervision call. possui 3 camadas; procedimento principal -> procedimento de servico -> procedimento ultilitarios compartilhados entre os de servico.
+Alguns sistemas incluem todas as possibilidades de servico no nucleo, pois ocupa menos espaco na meoria fazendo assim.
+
+Monolítico = kernel grande, componentes fortemente integrados, melhor tempo de resposta, porém menor isolamento/organização entre componentes.
+
+-- o que sao sistemas em camadas ?
+cada camada faz uma chamada para a camada inferior, do mais alto nivel sendo uma instrucao do usuario ate a mais baixa, instrucao do SO para o hardware.
+
+-- o que eh o micro-kernel ?
+a maior parte do SO eh implementada no nivel de usuario, quando necessario, o nucleo estabelece a comunicacao entre os processos. meio que como um cliente servidor. falhas em processos isolados nao causam erro, justamente por nao haver uma depencia forte
+
+-- o que sao maquinas virtuais ?
+criar uma máquina de hardware virtual sobre uma máquina física, permitindo executar sistemas operacionais isolados sobre ela.
+
+-- o que eh o exo-kernel ?
+kernel minimalista que faz a multiplexação segura dos recursos de hardware e os protege, deixando as abstrações tradicionais para o espaço de usuário.
+
+--- o que sao containers ?
+Os containers compartilham o kernel do sistema operacional hospedeiro.
+Container não possui um kernel próprio.
+Containers fazem isolamento a nível de processo e utilizam recursos do próprio SO, como namespaces, cgroups e SELinux.
+
+
+
+

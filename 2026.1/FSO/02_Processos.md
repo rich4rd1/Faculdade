@@ -54,7 +54,7 @@ Por que sistemas de propósito geral precisam de mecanismos para criar processos
 
 Quando um processo cria outro processo, qual é a relação estabelecida entre eles? Explique o conceito de processo pai e filho.
 
-> Como a unica forma de criar um processo no unix eh atraves da clonagem, um processo chama uma funçao de fork para si mesmo clonando a si proprio e criando outro proceso identico, e posteriormente, mudando apenas a estrutura interna daquele processo para cumprir a funcionalidade a qual ele foi chamado
+> Como a unica forma de criar um processo no unix eh atraves da clonagem, o processo init chama a funçao de fork clonando a si proprio e criando outro proceso identico, e posteriormente, mudando apenas a estrutura interna daquele processo para cumprir a funcionalidade a qual ele foi chamado
 
 ### 7. Estados
 
@@ -66,25 +66,37 @@ Explique os três estados fundamentais apresentados para um processo:
 
 > Bloqueado: esta pronto para ser rodado, porem, esta esperando um evento terminar para poder rodar. seja uma entrada ou saida em outro processo, ou nele mesmo.
 
+O que eh CPU BOUND e IO BOUND
+ o cpu bound passa mais tempo usando a cpu, no estado rodando ou no estado pronto ja os IO BOUND tem afinidade com entrada e saida, passam a maior parte do tempo bloqueados causados por eventos de entrada e saida. 
+
 ### 8. Transições
 
 Explique cada situação:
 
 a) Um processo rodando precisa esperar uma leitura de disco.
+entra no modo bloqueado e espera a leitura de disco terminar.
 
 b) Um processo bloqueado recebe o evento pelo qual estava esperando.
+ao receber o evento, passa para o estado pronto ou ele finaliza ou ele passa para o bloqueado novamente se estiver esperando um novo evento
 
 c) Um processo pronto é escolhido pelo escalonador.
+quando os processos se encontram no modo pronto sao escolhido pelo algoritmo escalnador para serem executados.
+com isso o SO fa a troca de contexto, e passa para o processo ganhador o uso da dos recurso, ate seu time sliced terminar e o escalonador reeleger outro processo.
 
-d) O processo em execução perde a posse do processador por preempção.
+d) O processo em execução perde a posse do processador por preempção. A cpu faz uma suspensao temporaria da execução do processo.
 
 ---
+
+### troca de contexto 
+Como funciona a troca de contexto ?
+cada dispositivo tem uma area de memoria chamada vetor de interrupçoes, contendo os endereços de procedimentos de serviços de interrupçoes
 
 ## Parte 3 — Escalonamento
 
 ### 9. Preempção
 
 O que significa um escalonamento ser preemptivo? Qual é a diferença para um escalonamento não preemptivo?
+no escalonamento não preemptivo, a cpu fica vinculada ao processo ate o final, sem chance de ser paralizado ou bloqueado pelo SO, ja o preemptivo cada processo tem um time sliced para operar e quando o tempo acaba o so retira o processador daquele processo e permite que outro seja executado
 
 ### 10. FCFS
 
